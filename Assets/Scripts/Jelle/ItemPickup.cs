@@ -10,6 +10,7 @@ public class ItemPickup : MonoBehaviour
     private bool HoldingObject;
     private float PickUpInputFloat;
     private List<float> PickupDistance = new();
+    private List<float> CounterDistance = new();
     private int PickupIndex;
     private GameObject ItemHolding;
 
@@ -79,6 +80,27 @@ public class ItemPickup : MonoBehaviour
         {
             ItemHolding.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 2, gameObject.transform.position.z);
             HoldingObject = true;
+        }
+    }
+
+    private void ChooseCounter()
+    {
+        if (PickUpInputFloat == 1 && HoldingObject == true)
+        {
+            float ClosestObject = 999;
+            for (int i = 0; CounterDistance.Count > i; i++)
+            {
+                if (CounterDistance[i] < ClosestObject && PickupDistance[i] < 3)
+                {
+                    ClosestObject = PickupDistance[i];
+                    PickupIndex = i + 1;
+                }
+            }
+            if (PickupIndex != 0)
+            {
+                ItemHolding = PickupsList.instance.ActivePickups[PickupIndex - 1];
+            }
+            PickupIndex = 0;
         }
     }
 }
