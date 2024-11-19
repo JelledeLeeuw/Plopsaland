@@ -4,17 +4,31 @@ using UnityEngine.UI;
 
 public class CookingPotQTE : MonoBehaviour
 {
+    private StationInteraction stationScript;
+    private GameObject station;
     private Slider slider;
+
+    //values for moving the slider
     private int sliderSpeed;
     private int sliderPositiveModif;
     private int sliderNegativeModif;
+
+    //values for calculating points
+    private int currentPoints;
+    private int targetPoints;
+    private int pointUp;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        station = transform.parent.gameObject;
+        stationScript = station.GetComponent<StationInteraction>();
+        currentPoints = 0;
+        targetPoints = 3;
+        pointUp = 1;
         sliderPositiveModif = 1;
-        sliderNegativeModif = 1;
+        sliderNegativeModif = -1;
         sliderSpeed = 1;
-        slider = GetComponent<Slider>();
+        slider = GetComponentInChildren<Slider>();
         Debug.Log(slider.value);
     }
 
@@ -29,11 +43,11 @@ public class CookingPotQTE : MonoBehaviour
 
         if (slider.value == 1)
         {
-            sliderSpeed = -1;
+            sliderSpeed = sliderNegativeModif;
         }
         if (slider.value == 0)
         {
-            sliderSpeed = 1;
+            sliderSpeed = sliderPositiveModif;
         }
     }
 
@@ -41,11 +55,13 @@ public class CookingPotQTE : MonoBehaviour
     {
         if (slider.value >= 0.4 && slider.value <= 0.6f)
         {
+            currentPoints = currentPoints + pointUp;
+            if (currentPoints == targetPoints)
+            {
+                stationScript.QTEFinished();
+                Debug.Log("Win");
+            }
             Debug.Log("yes");
-        }
-        else
-        {
-            Debug.Log("no");
         }
     }
 }

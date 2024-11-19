@@ -6,7 +6,6 @@ public class ChangeIngredientState : MonoBehaviour
     private MeshFilter meshFilter;
     [SerializeField] private Mesh[] ingredientLook;
     private bool isPrepared;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         isPrepared = false;
