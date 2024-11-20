@@ -16,7 +16,7 @@ public class ChangeIngredientState : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             if(isPrepared == false)
             {

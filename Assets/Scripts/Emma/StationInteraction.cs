@@ -3,7 +3,7 @@ using UnityEngine;
 public class StationInteraction : MonoBehaviour
 {
     [SerializeField] private GameObject QTEObject;
-    [SerializeField] private GameObject instantiatedObject;
+    private GameObject instantiatedObject;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
