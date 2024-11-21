@@ -33,6 +33,7 @@ public class ItemPickup : MonoBehaviour
 
     private void Update()
     {
+        SeeIfCooldownActive();
         CheckDistancePickup();
         CheckInput();
         ChooseGrabObject();
@@ -52,6 +53,18 @@ public class ItemPickup : MonoBehaviour
         else
         {
             Debug.LogError("Cant check if player is player1 or player2");
+        }
+    }
+
+    private void SeeIfCooldownActive()
+    {
+        if(Player1Or2 == 0)
+        {
+            CooldownActive = CooldownSystem.CooldownSystemScript.CooldownPlayer1;
+        }
+        else
+        {
+            CooldownActive = CooldownSystem.CooldownSystemScript.CooldownPlayer2;
         }
     }
 
@@ -91,9 +104,9 @@ public class ItemPickup : MonoBehaviour
                 if (PickupIndex != 0)
                 {
                     PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[Player1Or2] = PickupsList.instance.ActivePickups[PickupIndex - 1];
-                    //StartCoroutine(CooldownTimer());
                 }
                 PickupIndex = 0;
+                StartCooldown();
             }
         }
     }
@@ -114,10 +127,15 @@ public class ItemPickup : MonoBehaviour
         }
     }
 
-    private IEnumerator CooldownTimer()
+    private void StartCooldown()
     {
-        CooldownActive = true;
-        yield return new WaitForSeconds(1);
-        CooldownActive = false;
+        if (Player1Or2 == 0)
+        {
+            CooldownSystem.CooldownSystemScript.CooldownPlayer1 = true;
+        }
+        else
+        {
+            CooldownSystem.CooldownSystemScript.CooldownPlayer2 = true;
+        }
     }
 }
