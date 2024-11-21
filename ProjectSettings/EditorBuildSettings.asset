@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Prefabs/Scenes/MainMenu.unity
     guid: 3acdedd5fd51f5b48af8535fe0a39a7d
   - enabled: 1
-    path: Assets/Scenes/Emma.unity
+    path: Assets/Prefabs/Scenes/Emma.unity
     guid: 0f80e3f1df845414e85a9ae67f2e94eb
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
