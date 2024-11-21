@@ -44,7 +44,7 @@ public class CooldownSystem : MonoBehaviour
     private IEnumerator CooldownTimer1()
     {
         CoroutineCooldownPlayer1 = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         CoroutineCooldownPlayer1 = false;
         CooldownPlayer1 = false;
     }
@@ -52,7 +52,7 @@ public class CooldownSystem : MonoBehaviour
     private IEnumerator CooldownTimer2()
     {
         CoroutineCooldownPlayer2 = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         CoroutineCooldownPlayer2 = false;
         CooldownPlayer2 = false;
     }
