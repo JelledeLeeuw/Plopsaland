@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,9 @@ public class PlayersMovement : MonoBehaviour
 
     private Vector2 MovementInputsVector2Player1;
     private Vector2 MovementInputsVector2Player2;
+
+    private float RotationValuePlayer1;
+    private float RotationValuePlayer2;
 
     [Header("Movement settings")]
     [SerializeField] private float MovementSpeed;
@@ -41,6 +45,7 @@ public class PlayersMovement : MonoBehaviour
     private void Update()
     {
         CheckInput();
+        //RotatePlayer();
     }
 
     private void FixedUpdate()
@@ -58,5 +63,28 @@ public class PlayersMovement : MonoBehaviour
     {
         Player1RigidBody.linearVelocity = new Vector3(MovementInputsVector2Player1.x * MovementSpeed, 0, MovementInputsVector2Player1.y * MovementSpeed);
         Player2RigidBody.linearVelocity = new Vector3(MovementInputsVector2Player2.x * MovementSpeed, 0, MovementInputsVector2Player2.y * MovementSpeed);
+    }
+
+    private void RotatePlayer()
+    {
+        if (MovementInputsVector2Player1[0] == 1)
+        {
+            RotationValuePlayer1 = 0;
+        }
+        else if(MovementInputsVector2Player1[0] == -1)
+        {
+            RotationValuePlayer1 = 90;
+        }
+        else if (MovementInputsVector2Player1[1] == -1)
+        {
+            RotationValuePlayer1 = 180;
+        }
+        else if (MovementInputsVector2Player1[1] == -1)
+        {
+            RotationValuePlayer1 = 270;
+        }
+
+        Player1.transform.rotation = quaternion.Euler(0, RotationValuePlayer1, 0);
+        Player2.transform.rotation = quaternion.Euler(0, RotationValuePlayer2, 0);
     }
 }
