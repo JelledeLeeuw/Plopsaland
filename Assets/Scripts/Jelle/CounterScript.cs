@@ -7,6 +7,10 @@ public class CounterScript : MonoBehaviour
     private Vector2 PlaceInputsVector2;
     private bool CooldownActive1;
     private bool CooldownActive2;
+    private bool PutDownTriggerd;
+    private Collider CollisionOther;
+    private bool isPressed1;
+    private bool isPressed2;    
 
     [Header("PlaceInput inputs")]
     [SerializeField] private InputAction PlaceInputPlayer1;
@@ -26,64 +30,58 @@ public class CounterScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-         CheckInput();
+         
     }
 
-    private void CheckIfCooldown()
+    private void Update()
     {
-            if (PlaceInputsVector2[0] == 1)
-            {
-                StartCoroutine(CooldownTimer1());
-            }
-        
-            if(PlaceInputsVector2[1] == 1)
-            {
-                StartCoroutine(CooldownTimer2());
-            }
+        PutDownObject();
+        CheckInput();
     }
 
     private void CheckInput()
     {
         if (CooldownActive1 == false)
         {
-            PlaceInputsVector2[0] = PlaceInputPlayer1.ReadValue<float>();
+            isPressed1 = PlaceInputPlayer1.triggered && PlaceInputPlayer1.ReadValue<float>() > 0;
         }
         if (CooldownActive2 == false)
         {
-            PlaceInputsVector2[1] = PlaceInputPlayer2.ReadValue<float>();
+            isPressed2 = PlaceInputPlayer1.triggered && PlaceInputPlayer1.ReadValue<float>() > 0;
+        }
+    }
+
+    private void PutDownObject()
+    {
+        if(PutDownTriggerd == true)
+        {
+            if (CollisionOther.gameObject.CompareTag("Player1") && PlayersHolding.PlayerHoldingScript.Player1HoldingObject == true && isPressed1 && CooldownSystem.CooldownSystemScript.CooldownPlayer1 == false)
+            {
+                PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[0].transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 1, gameObject.transform.position.z);
+                PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[0] = null;
+                PlayersHolding.PlayerHoldingScript.Player1HoldingObject = false;
+                CooldownSystem.CooldownSystemScript.CooldownPlayer1 = true;
+                PutDownTriggerd = false;
+            }
+            else if (CollisionOther.gameObject.CompareTag("Player2") && PlayersHolding.PlayerHoldingScript.Player2HoldingObject == true && isPressed2 && CooldownSystem.CooldownSystemScript.CooldownPlayer2 == false)
+            {
+                PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[1].transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 1, gameObject.transform.position.z);
+                PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[1] = null;
+                PlayersHolding.PlayerHoldingScript.Player2HoldingObject = false;
+                CooldownSystem.CooldownSystemScript.CooldownPlayer2 = true;
+                PutDownTriggerd = false;
+            }
+            
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Player1") && PlayersHolding.PlayerHoldingScript.Player1HoldingObject == true && PlaceInputsVector2[0] == 1)
+        if (other.gameObject.CompareTag("Player1") || other.gameObject.CompareTag("Player1"))
         {
-            PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[0].transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 1, gameObject.transform.position.z);
-            PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[0] = null;
-            PlayersHolding.PlayerHoldingScript.Player1HoldingObject = false;
+            print("yes");
+            PutDownTriggerd = true;
+            CollisionOther = other;
         }
-        else if (other.gameObject.CompareTag("Player2") && PlayersHolding.PlayerHoldingScript.Player2HoldingObject == true && PlaceInputsVector2[1] == 1)
-        {
-            PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[1].transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 1, gameObject.transform.position.z);
-            PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[1] = null;
-            PlayersHolding.PlayerHoldingScript.Player2HoldingObject = false;
-        }
-        //CheckIfCooldown();
-    }
-
-    private IEnumerator CooldownTimer1()
-    {
-        PlaceInputsVector2[0] = 0;
-        CooldownActive1 = true;
-        yield return new WaitForSeconds(1);
-        CooldownActive1 = false;
-    }
-
-    private IEnumerator CooldownTimer2()
-    {
-        PlaceInputsVector2[1] = 0;
-        CooldownActive2 = true;
-        yield return new WaitForSeconds(1);
-        CooldownActive2 = false;
     }
 }

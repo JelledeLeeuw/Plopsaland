@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3099481175191605786}
   m_Layer: 0
   m_Name: Player1
-  m_TagString: Player
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,7 +157,7 @@ MonoBehaviour:
     m_ExpectedControlType: 
     m_Id: 3ff2ba88-7c49-43fe-be74-faf624d459a0
     m_Processors: 
-    m_Interactions: 
+    m_Interactions: Press
     m_SingletonActionBindings:
     - m_Name: 
       m_Id: cd5ae2d7-b1c9-425e-ad4f-db0501c31cc7
