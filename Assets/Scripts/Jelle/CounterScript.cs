@@ -9,6 +9,8 @@ public class CounterScript : MonoBehaviour
     private bool CooldownActive2;
     private bool PutDownTriggerd;
     private Collider CollisionOther;
+    private bool isPressed1;
+    private bool isPressed2;    
 
     [Header("PlaceInput inputs")]
     [SerializeField] private InputAction PlaceInputPlayer1;
@@ -28,23 +30,24 @@ public class CounterScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-         CheckInput();
+         
     }
 
     private void Update()
     {
-         PutDownObject();
+        PutDownObject();
+        CheckInput();
     }
 
     private void CheckInput()
     {
         if (CooldownActive1 == false)
         {
-            PlaceInputsVector2[0] = PlaceInputPlayer1.ReadValue<float>();
+            isPressed1 = PlaceInputPlayer1.triggered && PlaceInputPlayer1.ReadValue<float>() > 0;
         }
         if (CooldownActive2 == false)
         {
-            PlaceInputsVector2[1] = PlaceInputPlayer2.ReadValue<float>();
+            isPressed2 = PlaceInputPlayer1.triggered && PlaceInputPlayer1.ReadValue<float>() > 0;
         }
     }
 
@@ -52,27 +55,33 @@ public class CounterScript : MonoBehaviour
     {
         if(PutDownTriggerd == true)
         {
-            if (CollisionOther.gameObject.CompareTag("Player1") && PlayersHolding.PlayerHoldingScript.Player1HoldingObject == true && PlaceInputsVector2[0] == 1 && CooldownSystem.CooldownSystemScript.CooldownPlayer1 == false)
+            if (CollisionOther.gameObject.CompareTag("Player1") && PlayersHolding.PlayerHoldingScript.Player1HoldingObject == true && isPressed1 && CooldownSystem.CooldownSystemScript.CooldownPlayer1 == false)
             {
                 PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[0].transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 1, gameObject.transform.position.z);
                 PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[0] = null;
                 PlayersHolding.PlayerHoldingScript.Player1HoldingObject = false;
                 CooldownSystem.CooldownSystemScript.CooldownPlayer1 = true;
+                PutDownTriggerd = false;
             }
-            else if (CollisionOther.gameObject.CompareTag("Player2") && PlayersHolding.PlayerHoldingScript.Player2HoldingObject == true && PlaceInputsVector2[1] == 1 && CooldownSystem.CooldownSystemScript.CooldownPlayer2 == false)
+            else if (CollisionOther.gameObject.CompareTag("Player2") && PlayersHolding.PlayerHoldingScript.Player2HoldingObject == true && isPressed2 && CooldownSystem.CooldownSystemScript.CooldownPlayer2 == false)
             {
                 PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[1].transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 1, gameObject.transform.position.z);
                 PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[1] = null;
                 PlayersHolding.PlayerHoldingScript.Player2HoldingObject = false;
                 CooldownSystem.CooldownSystemScript.CooldownPlayer2 = true;
+                PutDownTriggerd = false;
             }
-            PutDownTriggerd = false;
+            
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        PutDownTriggerd = true;
-        CollisionOther = other;
+        if (other.gameObject.CompareTag("Player1") || other.gameObject.CompareTag("Player1"))
+        {
+            print("yes");
+            PutDownTriggerd = true;
+            CollisionOther = other;
+        }
     }
 }

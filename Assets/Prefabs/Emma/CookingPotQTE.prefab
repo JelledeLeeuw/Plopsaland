@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 2562796514617053212}
   - component: {fileID: 7263209611003120628}
   - component: {fileID: 2139758746911968164}
-  - component: {fileID: 7849401351917211439}
+  - component: {fileID: 4302780369046218323}
   m_Layer: 5
   m_Name: CookingPotQTE
   m_TagString: Untagged
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &7849401351917211439
+--- !u!114 &4302780369046218323
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5482034468030177524}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d4900abb8de39d4ebb0e399a7f2148f, type: 3}
+  m_Script: {fileID: 11500000, guid: f5c80ffb7d81aa04e8ef0cabc7557fe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6476772518810032543

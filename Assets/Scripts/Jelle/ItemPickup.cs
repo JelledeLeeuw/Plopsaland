@@ -106,7 +106,7 @@ public class ItemPickup : MonoBehaviour
                     PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[Player1Or2] = PickupsList.instance.ActivePickups[PickupIndex - 1];
                 }
                 PickupIndex = 0;
-                StartCooldown();
+                //StartCooldown();
             }
         }
     }
