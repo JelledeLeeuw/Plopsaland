@@ -1,15 +1,14 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CounterScript : MonoBehaviour
+public class TrashCan : MonoBehaviour
 {
     private bool CooldownActive1;
     private bool CooldownActive2;
     private bool PutDownTriggerd;
     private Collider CollisionOther;
     private bool isPressed1;
-    private bool isPressed2;    
+    private bool isPressed2;
 
     [Header("PlaceInput inputs")]
     [SerializeField] private InputAction PlaceInputPlayer1;
@@ -29,7 +28,6 @@ public class CounterScript : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(PlayersHolding.PlayerHoldingScript.Player2HoldingObject);
         PutDownObject();
         CheckInput();
     }
@@ -48,23 +46,23 @@ public class CounterScript : MonoBehaviour
 
     private void PutDownObject()
     {
-        if(PutDownTriggerd == true)
+        if (PutDownTriggerd == true)
         {
             if (CollisionOther.gameObject.CompareTag("Player1") && PlayersHolding.PlayerHoldingScript.Player1HoldingObject == true && isPressed1 && CooldownSystem.CooldownSystemScript.CooldownPlayer1 == false)
             {
-                PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[0].transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 1, gameObject.transform.position.z);
+                Destroy(PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[0]);
                 PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[0] = null;
                 PlayersHolding.PlayerHoldingScript.Player1HoldingObject = false;
                 CooldownSystem.CooldownSystemScript.CooldownPlayer1 = true;
             }
             else if (CollisionOther.gameObject.CompareTag("Player2") && PlayersHolding.PlayerHoldingScript.Player2HoldingObject == true && isPressed2 && CooldownSystem.CooldownSystemScript.CooldownPlayer2 == false)
             {
-                PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[1].transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 1, gameObject.transform.position.z);
+                Destroy(PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[1]);
                 PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[1] = null;
                 PlayersHolding.PlayerHoldingScript.Player2HoldingObject = false;
                 CooldownSystem.CooldownSystemScript.CooldownPlayer2 = true;
             }
-            
+
         }
     }
 
