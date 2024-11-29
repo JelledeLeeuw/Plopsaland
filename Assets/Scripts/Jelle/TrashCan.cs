@@ -48,18 +48,18 @@ public class TrashCan : MonoBehaviour
     {
         if (PutDownTriggerd == true)
         {
-            if (CollisionOther.gameObject.CompareTag("Player1") && PlayersHolding.PlayerHoldingScript.Player1HoldingObject == true && isPressed1 && CooldownSystem.CooldownSystemScript.CooldownPlayer1 == false)
+            if (CollisionOther.gameObject.CompareTag("Player1") && PlayersHolding.PlayerHoldingScript.PlayerHoldingObject[0] == true && isPressed1 && CooldownSystem.CooldownSystemScript.CooldownPlayer1 == false)
             {
                 Destroy(PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[0]);
                 PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[0] = null;
-                PlayersHolding.PlayerHoldingScript.Player1HoldingObject = false;
+                PlayersHolding.PlayerHoldingScript.PlayerHoldingObject[0] = false;
                 CooldownSystem.CooldownSystemScript.CooldownPlayer1 = true;
             }
-            else if (CollisionOther.gameObject.CompareTag("Player2") && PlayersHolding.PlayerHoldingScript.Player2HoldingObject == true && isPressed2 && CooldownSystem.CooldownSystemScript.CooldownPlayer2 == false)
+            else if (CollisionOther.gameObject.CompareTag("Player2") && PlayersHolding.PlayerHoldingScript.PlayerHoldingObject[1] == true && isPressed2 && CooldownSystem.CooldownSystemScript.CooldownPlayer2 == false)
             {
                 Destroy(PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[1]);
                 PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[1] = null;
-                PlayersHolding.PlayerHoldingScript.Player2HoldingObject = false;
+                PlayersHolding.PlayerHoldingScript.PlayerHoldingObject[1] = false;
                 CooldownSystem.CooldownSystemScript.CooldownPlayer2 = true;
             }
 

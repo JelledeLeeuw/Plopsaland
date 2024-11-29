@@ -4,8 +4,7 @@ using UnityEngine;
 public class PlayersHolding : MonoBehaviour
 {
     public static PlayersHolding PlayerHoldingScript;
-    public bool Player1HoldingObject;
-    public bool Player2HoldingObject;
+    public bool[] PlayerHoldingObject;
     public GameObject[] PlayerGameobjectHolding;
 
     private void Awake()

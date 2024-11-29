@@ -60,7 +60,7 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Id: f3340675-7fb9-4922-af0a-f2e25f063990
-      m_Path: <Keyboard>/e
+      m_Path: <Keyboard>/q
       m_Interactions: Press
       m_Processors: 
       m_Groups: 
@@ -103,7 +103,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.3, y: 1, z: 1.6}
+  m_Size: {x: 0.3, y: 2, z: 1.6}
   m_Center: {x: 0.01, y: 0.5, z: 0.05}
 --- !u!65 &2341838736912113227
 BoxCollider:
@@ -124,7 +124,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.6, y: 1, z: 0.3}
+  m_Size: {x: 1.6, y: 2, z: 0.3}
   m_Center: {x: 0.01, y: 0.5, z: 0.05}
 --- !u!65 &6156880310221514540
 BoxCollider:
