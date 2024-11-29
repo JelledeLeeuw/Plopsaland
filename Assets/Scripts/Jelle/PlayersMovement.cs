@@ -10,9 +10,6 @@ public class PlayersMovement : MonoBehaviour
     private Vector2 MovementInputsVector2Player1;
     private Vector2 MovementInputsVector2Player2;
 
-    private float RotationValuePlayer1;
-    private float RotationValuePlayer2;
-
     [Header("Movement settings")]
     [SerializeField] private float MovementSpeed;
 
@@ -45,7 +42,7 @@ public class PlayersMovement : MonoBehaviour
     private void Update()
     {
         CheckInput();
-        //RotatePlayer();
+        RotatePlayer();
     }
 
     private void FixedUpdate()
@@ -67,24 +64,38 @@ public class PlayersMovement : MonoBehaviour
 
     private void RotatePlayer()
     {
-        if (MovementInputsVector2Player1[0] == 1)
+        if (MovementInputsVector2Player1[0] == 1 && MovementInputsVector2Player1[1] == 0)
         {
-            RotationValuePlayer1 = 0;
+            Player1.transform.rotation = Quaternion.Slerp(Player1.transform.rotation, Quaternion.Euler(0, 270, 0), 0.15f);
         }
-        else if(MovementInputsVector2Player1[0] == -1)
+        else if(MovementInputsVector2Player1[0] == -1 && MovementInputsVector2Player1[1] == 0)
         {
-            RotationValuePlayer1 = 90;
+            Player1.transform.rotation = Quaternion.Slerp(Player1.transform.rotation, Quaternion.Euler(0, 90, 0), 0.15f);
         }
-        else if (MovementInputsVector2Player1[1] == -1)
+        else if (MovementInputsVector2Player1[1] == 1 && MovementInputsVector2Player1[0] == 0)
         {
-            RotationValuePlayer1 = 180;
+            Player1.transform.rotation = Quaternion.Slerp(Player1.transform.rotation, Quaternion.Euler(0, 180, 0), 0.15f);
         }
-        else if (MovementInputsVector2Player1[1] == -1)
+        else if (MovementInputsVector2Player1[1] == -1 && MovementInputsVector2Player1[0] == 0)
         {
-            RotationValuePlayer1 = 270;
+            Player1.transform.rotation = Quaternion.Slerp(Player1.transform.rotation, Quaternion.Euler(0, 360, 0), 0.15f);
         }
 
-        Player1.transform.rotation = quaternion.Euler(0, RotationValuePlayer1, 0);
-        Player2.transform.rotation = quaternion.Euler(0, RotationValuePlayer2, 0);
+        if (MovementInputsVector2Player2[0] == 1 && MovementInputsVector2Player2[1] == 0)
+        {
+            Player2.transform.rotation = Quaternion.Slerp(Player2.transform.rotation, Quaternion.Euler(0, 270, 0), 0.15f);
+        }
+        else if (MovementInputsVector2Player2[0] == -1 && MovementInputsVector2Player2[1] == 0)
+        {
+            Player2.transform.rotation = Quaternion.Slerp(Player2.transform.rotation, Quaternion.Euler(0, 90, 0), 0.15f);
+        }
+        else if (MovementInputsVector2Player2[1] == 1 && MovementInputsVector2Player2[0] == 0)
+        {
+            Player2.transform.rotation = Quaternion.Slerp(Player2.transform.rotation, Quaternion.Euler(0, 180, 0), 0.15f);
+        }
+        else if (MovementInputsVector2Player2[1] == -1 && MovementInputsVector2Player2[0] == 0)
+        {
+            Player2.transform.rotation = Quaternion.Slerp(Player2.transform.rotation, Quaternion.Euler(0, 360, 0), 0.15f);
+        }
     }
 }
