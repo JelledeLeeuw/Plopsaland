@@ -90,7 +90,7 @@ public class ItemPickup : MonoBehaviour
     {
         if(PickUpInputFloat == 1 && CooldownActive == false)
         {
-            if (PlayersHolding.PlayerHoldingScript.Player1HoldingObject == false || PlayersHolding.PlayerHoldingScript.Player2HoldingObject == false)
+            if (PlayersHolding.PlayerHoldingScript.PlayerHoldingObject[Player1Or2] == false)
             {
                 float ClosestObject = 999;
                 for (int i = 0; PickupDistance.Count > i; i++)
@@ -106,7 +106,6 @@ public class ItemPickup : MonoBehaviour
                     PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[Player1Or2] = PickupsList.instance.ActivePickups[PickupIndex - 1];
                 }
                 PickupIndex = 0;
-                //StartCooldown();
             }
         }
     }
@@ -116,26 +115,7 @@ public class ItemPickup : MonoBehaviour
         if (PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[Player1Or2] != null)
         {
             PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[Player1Or2].transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 2, gameObject.transform.position.z);
-            if(Player1Or2 == 0)
-            {
-                PlayersHolding.PlayerHoldingScript.Player1HoldingObject = true;
-            }
-            else
-            {
-                PlayersHolding.PlayerHoldingScript.Player2HoldingObject = true;
-            }
-        }
-    }
-
-    private void StartCooldown()
-    {
-        if (Player1Or2 == 0)
-        {
-            CooldownSystem.CooldownSystemScript.CooldownPlayer1 = true;
-        }
-        else
-        {
-            CooldownSystem.CooldownSystemScript.CooldownPlayer2 = true;
+            PlayersHolding.PlayerHoldingScript.PlayerHoldingObject[Player1Or2] = true;
         }
     }
 }

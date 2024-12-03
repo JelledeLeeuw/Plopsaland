@@ -6,4 +6,9 @@ public class PickupsAddToList : MonoBehaviour
     {
         PickupsList.instance.ActivePickups.Add(gameObject);
     }
+
+    private void OnDestroy()
+    {
+        PickupsList.instance.ActivePickups.Remove(gameObject);
+    }
 }
