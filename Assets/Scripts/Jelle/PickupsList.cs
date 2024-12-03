@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class PickupsList : MonoBehaviour
 {
-    public static PickupsList instance;
+    public static PickupsList PickupsListScript;
     public List<GameObject> ActivePickups = new();
 
     private void Awake()
     {
-        if (instance == null)
+        if (PickupsListScript == null)
         {
-            instance = this;
+            PickupsListScript = this;
         }
         else
         {

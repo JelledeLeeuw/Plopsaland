@@ -75,9 +75,9 @@ public class ItemPickup : MonoBehaviour
             PickupDistance.Clear();
         }
 
-        for (int i = 0; PickupsList.instance.ActivePickups.Count > i; i++)
+        for (int i = 0; PickupsList.PickupsListScript.ActivePickups.Count > i; i++)
         {
-            PickupDistance.Add(Vector3.Distance(transform.position, PickupsList.instance.ActivePickups[i].transform.position));
+            PickupDistance.Add(Vector3.Distance(transform.position, PickupsList.PickupsListScript.ActivePickups[i].transform.position));
         }
     }
 
@@ -103,7 +103,7 @@ public class ItemPickup : MonoBehaviour
                 }
                 if (PickupIndex != 0)
                 {
-                    PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[Player1Or2] = PickupsList.instance.ActivePickups[PickupIndex - 1];
+                    PlayersHolding.PlayerHoldingScript.PlayerGameobjectHolding[Player1Or2] = PickupsList.PickupsListScript.ActivePickups[PickupIndex - 1];
                 }
                 PickupIndex = 0;
             }

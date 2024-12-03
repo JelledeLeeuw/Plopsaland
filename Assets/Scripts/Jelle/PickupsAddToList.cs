@@ -4,11 +4,11 @@ public class PickupsAddToList : MonoBehaviour
 {
     private void Start()
     {
-        PickupsList.instance.ActivePickups.Add(gameObject);
+        PickupsList.PickupsListScript.ActivePickups.Add(gameObject);
     }
 
     private void OnDestroy()
     {
-        PickupsList.instance.ActivePickups.Remove(gameObject);
+        PickupsList.PickupsListScript.ActivePickups.Remove(gameObject);
     }
 }
