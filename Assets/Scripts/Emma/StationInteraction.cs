@@ -9,13 +9,6 @@ public class StationInteraction : MonoBehaviour
     {
         instantiatedObject = Instantiate(QTEObject, transform);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void QTEFinished()
     {
         Destroy(instantiatedObject);

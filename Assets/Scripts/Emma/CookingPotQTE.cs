@@ -58,10 +58,9 @@ public class CookingPotQTE : MonoBehaviour
             currentPoints = currentPoints + pointUp;
             if (currentPoints == targetPoints)
             {
+                //finishes the QTE via the StationInteraction script
                 stationScript.QTEFinished();
-                Debug.Log("Win");
             }
-            Debug.Log("yes");
         }
     }
 }
