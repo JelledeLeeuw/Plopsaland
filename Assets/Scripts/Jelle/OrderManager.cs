@@ -43,7 +43,7 @@ public class OrderManager : MonoBehaviour
                     }
                 }
             }
-            TypeOrderGameobject[LowestCounterIndex].gameObject.SetActive(false);
+            Destroy( TypeOrderGameobject[LowestCounterIndex].gameObject);
             Order1OnCounter = false;
         }
     }
