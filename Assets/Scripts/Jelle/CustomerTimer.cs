@@ -47,6 +47,7 @@ public class CustomerTimer : MonoBehaviour
     private void UpdateOrderList()
     { 
         OrderManager.OrderManagerScript.TypeOrderAndTimer.Add(new Vector2((TimerCustomer[0] * 60) + TimerCustomer[1], OrderType));
+        OrderManager.OrderManagerScript.TypeOrderGameobject.Add(gameObject);
     }
 
     private void OnTimerEnd()

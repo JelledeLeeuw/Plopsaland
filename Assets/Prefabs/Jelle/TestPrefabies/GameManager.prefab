@@ -9,11 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2832372261740671040}
-  - component: {fileID: 3267832170965684224}
   - component: {fileID: 7764573595379472707}
   - component: {fileID: 621859188898728039}
   - component: {fileID: 6326340497402299410}
   - component: {fileID: 8771787882670671354}
+  - component: {fileID: 4367044446139056998}
+  - component: {fileID: 3379136029742759244}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -36,28 +37,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3267832170965684224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3163862370185383301}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3fcb617b4123734da0b279d42a3c4c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Counters:
-  - {fileID: 114220546982993502, guid: 6e7031b429fd36e45a7449f44bd3b6c3, type: 3}
-  - {fileID: 114220546982993502, guid: 6e7031b429fd36e45a7449f44bd3b6c3, type: 3}
-  - {fileID: 919132149155446097, guid: d335b367ccecdd14aadc374c6f27e323, type: 3}
-  - {fileID: 919132149155446097, guid: 192bd14186567914b9e484332d3825a7, type: 3}
-  - {fileID: 919132149155446097, guid: 192bd14186567914b9e484332d3825a7, type: 3}
-  - {fileID: 7596291945934435889, guid: 7431202a0feab1e47bf2bf68462f1f2d, type: 3}
-  - {fileID: 7596291945934435889, guid: 7431202a0feab1e47bf2bf68462f1f2d, type: 3}
-  - {fileID: 7596291945934435889, guid: 7431202a0feab1e47bf2bf68462f1f2d, type: 3}
-  CounterManager: {fileID: 0}
 --- !u!114 &7764573595379472707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,8 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3a4f00f1672b440b59510082c22390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1HoldingObject: 0
-  Player2HoldingObject: 0
+  PlayerHoldingObject: 0000
   PlayerGameobjectHolding:
   - {fileID: 0}
   - {fileID: 0}
@@ -215,3 +193,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CooldownPlayer1: 0
   CooldownPlayer2: 0
+--- !u!114 &4367044446139056998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3163862370185383301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b459a958bb108b4d863ad11cfc20b24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeDisplay: {fileID: 0}
+  Minutes: 5
+  Seconds: 0
+--- !u!114 &3379136029742759244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3163862370185383301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fddd09ecd5b714e90954f368492fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TypeOrderAndTimer: []
+  TypeOrderGameobject: []
