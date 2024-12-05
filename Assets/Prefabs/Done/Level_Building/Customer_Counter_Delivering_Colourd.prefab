@@ -1,0 +1,176 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6561148873964542563
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 23925db2e1137cb459f74d55eba41626, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.777743
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 23925db2e1137cb459f74d55eba41626, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 23925db2e1137cb459f74d55eba41626, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.5168886
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 23925db2e1137cb459f74d55eba41626, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 23925db2e1137cb459f74d55eba41626, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 23925db2e1137cb459f74d55eba41626, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 23925db2e1137cb459f74d55eba41626, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 23925db2e1137cb459f74d55eba41626, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 23925db2e1137cb459f74d55eba41626, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 23925db2e1137cb459f74d55eba41626, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 23925db2e1137cb459f74d55eba41626, type: 3}
+      propertyPath: m_Name
+      value: Customer_Counter_Delivering_Colourd
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 23925db2e1137cb459f74d55eba41626, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7093565517224411473}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 23925db2e1137cb459f74d55eba41626, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2934216052587826835}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 23925db2e1137cb459f74d55eba41626, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5612990528588467265}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 23925db2e1137cb459f74d55eba41626, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8329906122962929162}
+  m_SourcePrefab: {fileID: 100100000, guid: 23925db2e1137cb459f74d55eba41626, type: 3}
+--- !u!1 &6326585450380224306 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 23925db2e1137cb459f74d55eba41626, type: 3}
+  m_PrefabInstance: {fileID: 6561148873964542563}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &7093565517224411473
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6326585450380224306}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 2}
+  m_Center: {x: 0, y: 0.5, z: -0.62}
+--- !u!65 &2934216052587826835
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6326585450380224306}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2, z: 1}
+  m_Center: {x: 0, y: 0.5, z: -0.62}
+--- !u!114 &5612990528588467265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6326585450380224306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47ef6c3ba88b8404096d0e1b9e68e1ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8329906122962929162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6326585450380224306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 891e8d2686e75524cb1b87b542f05039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlaceInputPlayer1:
+    m_Name: Place Input Player 1
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: dfd321f7-b0c7-4f8a-a802-4320d22480ca
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 3551fc1d-63f5-479d-84d4-4f006831f7a2
+      m_Path: <Keyboard>/q
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Place Input Player 1
+      m_Flags: 0
+    m_Flags: 0
+  PlaceInputPlayer2:
+    m_Name: Place Input Player 2
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 0da48ffe-0e00-4bc4-a0ab-efec24497121
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 2eea1091-14c9-4792-9932-badbea331145
+      m_Path: <Keyboard>/period
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Place Input Player 2
+      m_Flags: 0
+    m_Flags: 0

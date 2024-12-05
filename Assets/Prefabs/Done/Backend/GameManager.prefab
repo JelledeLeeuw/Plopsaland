@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3163862370185383301
+--- !u!1 &5249079041934025684
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,13 +8,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2832372261740671040}
-  - component: {fileID: 7764573595379472707}
-  - component: {fileID: 621859188898728039}
-  - component: {fileID: 6326340497402299410}
-  - component: {fileID: 8771787882670671354}
-  - component: {fileID: 4367044446139056998}
-  - component: {fileID: 3379136029742759244}
+  - component: {fileID: 1843004671508694493}
+  - component: {fileID: 7473351098104774747}
+  - component: {fileID: 7534305967109708858}
+  - component: {fileID: 2027648599600308527}
+  - component: {fileID: 2106002476498654793}
+  - component: {fileID: 2473720292218425795}
+  - component: {fileID: 1593436950945837858}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -22,13 +22,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2832372261740671040
+--- !u!4 &1843004671508694493
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3163862370185383301}
+  m_GameObject: {fileID: 5249079041934025684}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -37,13 +37,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7764573595379472707
+--- !u!114 &7473351098104774747
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3163862370185383301}
+  m_GameObject: {fileID: 5249079041934025684}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c70752fcb2807944db45f59949334d81, type: 3}
@@ -150,26 +150,26 @@ MonoBehaviour:
     m_Flags: 0
   Player1: {fileID: 0}
   Player2: {fileID: 0}
---- !u!114 &621859188898728039
+--- !u!114 &7534305967109708858
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3163862370185383301}
+  m_GameObject: {fileID: 5249079041934025684}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 362efb84bdf80e84ba6a88e45bb61015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ActivePickups: []
---- !u!114 &6326340497402299410
+--- !u!114 &2027648599600308527
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3163862370185383301}
+  m_GameObject: {fileID: 5249079041934025684}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b3a4f00f1672b440b59510082c22390, type: 3}
@@ -179,13 +179,13 @@ MonoBehaviour:
   PlayerGameobjectHolding:
   - {fileID: 0}
   - {fileID: 0}
---- !u!114 &8771787882670671354
+--- !u!114 &2106002476498654793
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3163862370185383301}
+  m_GameObject: {fileID: 5249079041934025684}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a707070202362b642b3b2b91f1c9c59a, type: 3}
@@ -193,13 +193,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CooldownPlayer1: 0
   CooldownPlayer2: 0
---- !u!114 &4367044446139056998
+--- !u!114 &2473720292218425795
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3163862370185383301}
+  m_GameObject: {fileID: 5249079041934025684}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b459a958bb108b4d863ad11cfc20b24, type: 3}
@@ -208,13 +208,13 @@ MonoBehaviour:
   TimeDisplay: {fileID: 0}
   Minutes: 5
   Seconds: 0
---- !u!114 &3379136029742759244
+--- !u!114 &1593436950945837858
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3163862370185383301}
+  m_GameObject: {fileID: 5249079041934025684}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 97fddd09ecd5b714e90954f368492fec, type: 3}
