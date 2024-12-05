@@ -16,12 +16,12 @@ public class ItemPickup : MonoBehaviour
     [Header("Movement inputs")]
     [SerializeField] private InputAction PickUpInput;
 
-    private void OnEnable()
+    public void OnEnable()
     {
         PickUpInput.Enable();
     }
 
-    private void OnDisable()
+    public void OnDisable()
     {
         PickUpInput.Disable();
     }

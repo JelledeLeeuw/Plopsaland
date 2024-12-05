@@ -21,7 +21,7 @@ public class CuttingBoardQTE : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(stationScript.selectedInput))
         {
             currentPoints++;
             if (currentPoints == targetPoints)

@@ -17,20 +17,20 @@ public class PlayersMovement : MonoBehaviour
     [SerializeField] private float MovementSpeed;
 
     [Header("Movement inputs")]
-    [SerializeField] private InputAction MovementInputsPlayer1;
-    [SerializeField] private InputAction MovementInputsPlayer2;
+    public InputAction MovementInputsPlayer1;
+    public InputAction MovementInputsPlayer2;
 
     [Header("Player gameobjects")]
     [SerializeField] private GameObject Player1;
     [SerializeField] private GameObject Player2;
 
-    private void OnEnable()
+    public void OnEnable()
     {
         MovementInputsPlayer1.Enable();
         MovementInputsPlayer2.Enable();
     }
 
-    private void OnDisable()
+    public void OnDisable()
     {
         MovementInputsPlayer1.Disable();
         MovementInputsPlayer2.Disable();
